@@ -1,5 +1,12 @@
 <nav class="container">
-  <div class="wrapper">
+  <img
+    src="assets/images/svg/menu.svg"
+    width="30px"
+    class="menu"
+    alt="menu icon"
+    (click)="toggle()"
+  />
+  <div class="wrapper" [ngClass]="onOpen ? 'show' : ''">
     <p class="logo">Logo</p>
     <div class="links">
       <ng-container *ngFor="let link of navLinks; let last = last">

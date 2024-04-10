@@ -11,6 +11,7 @@ import { ButtonComponent } from '../shared/button/button.component';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
+  onOpen = false;
   navLinks: { path: string; name: string }[] = [
     {
       path: '',
@@ -28,6 +29,10 @@ export class HeaderComponent {
   ];
 
   constructor(private router: Router) {}
+
+  toggle() {
+    this.onOpen = !this.onOpen;
+  }
 
   onNavigate() {
     this.router.navigateByUrl(this.navLinks[this.navLinks.length - 1].path);
