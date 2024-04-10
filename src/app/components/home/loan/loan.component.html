@@ -1,0 +1,27 @@
+<div class="container">
+  <div>
+    <p class="heading">Are you looking for a quick loan? Get your loan in</p>
+    <p class="time">24 hours ⏳</p>
+  </div>
+  <div class="step">
+    <div class="left">
+      <div>a</div>
+      <div class="list">
+        <div class="item" *ngFor="let item of steps; let last = last">
+          <p class="name" [ngClass]="last ? 'last' : ''">
+            {{ item.name }}
+          </p>
+          <p class="body" [ngClass]="last ? 'last' : ''">
+            {{ item.body }}
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="right">
+      <img
+        src="assets/images/svg/female_1.svg"
+        alt="woman going through files"
+      />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,82 @@
+@use "../../../../utils.scss";
+
+.container {
+  @include utils.centerPage();
+  padding: 4.25rem 0.625rem;
+  display: grid;
+  gap: 3rem;
+
+  .heading {
+    width: 48%;
+    font: 700 2.5rem utils.$gt;
+    line-height: 3.75rem;
+    color: utils.$black_1;
+
+    @media (max-width: 768px) {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  .time {
+    font: 700 2.5rem utils.$gt;
+    line-height: 3.75rem;
+    color: utils.$purple_1;
+
+    @media (max-width: 768px) {
+      text-align: center;
+    }
+  }
+
+  .step {
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+
+    @media (max-width: 850px) {
+      grid-template-columns: 1fr;
+    }
+
+    .left {
+      display: flex;
+      gap: 1rem;
+
+      .list {
+        display: grid;
+        gap: 2.5rem;
+
+        .item {
+          display: grid;
+          gap: 1rem;
+
+          .name {
+            font: 700 2rem utils.$gt;
+            color: utils.$black_1;
+            line-height: 2.5rem;
+
+            &.last {
+              color: #bdbdbd;
+            }
+          }
+
+          .body {
+            font: 400 1.125rem utils.$prox;
+            color: utils.$black_1;
+            line-height: 1.7rem;
+
+            &.last {
+              color: #bdbdbd;
+            }
+          }
+        }
+      }
+    }
+
+    .right {
+      text-align: center;
+      img {
+        @include utils.respImg();
+      }
+    }
+  }
+}
