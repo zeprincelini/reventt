@@ -1,0 +1,105 @@
+@use "../../../../utils.scss";
+
+.container {
+  background-color: utils.$blue_1;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  color: #fff;
+
+  .wrapper {
+    @include utils.centerPage();
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1rem;
+
+    @media (max-width: 850px) {
+      gap: 1.5rem;
+      grid-template-columns: 1fr;
+    }
+
+    .left {
+      display: grid;
+      gap: 1.5rem;
+      width: 90%;
+
+      @media (max-width: 850px) {
+        width: 100%;
+      }
+
+      .imgWrapper {
+        padding: 1rem;
+        width: fit-content;
+        border-radius: 50%;
+        background-color: white;
+      }
+
+      .title {
+        font: 700 2.5rem utils.$gt;
+        line-height: 2.8rem;
+      }
+
+      .body {
+        font: 400 1.5rem utils.$prox;
+        line-height: 2.55rem;
+      }
+
+      .name {
+        font: 600 1.5rem utils.$prox;
+        line-height: 1.8rem;
+        font-style: italic;
+      }
+
+      .pagination {
+        margin-top: 0.4rem;
+        display: flex;
+        gap: 1.5rem;
+
+        .prev,
+        .next {
+          cursor: pointer;
+          background-color: white;
+          padding: 0.5rem;
+          border-radius: 50%;
+          width: 40px;
+          display: grid;
+          place-content: center;
+          height: 40px;
+
+          &.disabled {
+            opacity: 20%;
+            pointer-events: none;
+          }
+        }
+      }
+    }
+    .right {
+      position: relative;
+      display: grid;
+      place-content: center;
+
+      .white {
+        transform: rotate(90deg);
+        position: absolute;
+        z-index: 1;
+        right: 0;
+        top: -10px;
+      }
+
+      .woman {
+        z-index: 2;
+
+        @media (max-width: 850px) {
+          @include utils.respImg();
+        }
+      }
+
+      .yellow {
+        z-index: 1;
+        left: 0;
+        bottom: -10px;
+        transform: rotate(90deg);
+        position: absolute;
+      }
+    }
+  }
+}
