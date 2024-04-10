@@ -1,7 +1,7 @@
 @use "../../../../../utils.scss";
 
 .container {
-  padding: 60px 10px 0px 10px;
+  padding: 3.75rem 0.625rem 0px 0.625rem;
   background-color: utils.$blue_1;
   color: #ffffff;
 
@@ -18,19 +18,19 @@
 
     .logo {
       cursor: pointer;
-      font-size: 40px;
+      font-size: 2.5rem;
       font-weight: 400;
       font-family: utils.$day;
       color: #ffffff;
 
       @media (max-width: 768px) {
-        font-size: 30px;
+        font-size: 1.25rem;
       }
     }
 
     .links {
       display: flex;
-      gap: 24px;
+      gap: 1.5rem;
 
       @media (max-width: 768px) {
         flex-direction: column;
@@ -40,27 +40,27 @@
       .link {
         color: #fff;
         text-decoration: none;
-        font: 400 18px utils.$gt;
+        font: 400 1.125rem utils.$gt;
       }
     }
 
     .socials {
       display: flex;
-      gap: 24px;
+      gap: 1.5rem;
     }
   }
 
   .line {
     width: 97%;
     opacity: 20%;
-    margin: 20px auto;
+    margin: 1.25rem auto;
     border-color: #fff;
   }
 
   .note {
     word-wrap: break-word;
-    padding: 30px 0px 40px 0px;
+    padding: 1.875rem 0px 2.5rem 0px;
     text-align: center;
-    font: 400 18px utils.$gt;
+    font: 400 1.125rem utils.$gt;
   }
 }

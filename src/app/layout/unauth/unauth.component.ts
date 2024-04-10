@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from 'src/app/components/header/header.component';
-import { FooterComponent } from 'src/app/components/footer/footer.component';
+import { HeaderComponent } from 'src/app/components/layout/unauth/header/header.component';
+import { FooterComponent } from 'src/app/components/layout/unauth/footer/footer.component';
 import { RouterModule } from '@angular/router';
 
 @Component({
