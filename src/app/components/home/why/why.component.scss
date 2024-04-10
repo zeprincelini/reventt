@@ -1,0 +1,41 @@
+@use "../../../../utils.scss";
+
+.container {
+  @include utils.centerPage();
+  padding: 3.25rem 0.625rem;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+
+  @media (max-width: 850px) {
+    flex-direction: column-reverse;
+  }
+
+  .left {
+    flex: 1;
+    display: grid;
+    gap: 1.5rem;
+
+    .heading {
+      font: 700 2.5rem utils.$gt;
+      line-height: 2.8rem;
+      color: #0a0a0a;
+      span {
+        color: utils.$purple_1;
+      }
+    }
+
+    .body {
+      font: 400 1.5rem utils.$prox;
+      color: utils.$black_1;
+    }
+  }
+
+  .right {
+    flex: 1;
+    text-align: center;
+    img {
+      @include utils.respImg();
+    }
+  }
+}
