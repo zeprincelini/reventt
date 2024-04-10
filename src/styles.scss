@@ -43,6 +43,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("assets/fonts/proxima/ProximaNova-SemiboldIt.ttf") format("truetype");
+  font-weight: 600;
+  font-style: italic;
+}
+
 * {
   margin: 0;
   padding: 0;
