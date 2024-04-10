@@ -4,10 +4,23 @@
   width: fit-content;
   border-radius: 20px;
   padding: 0.25rem 2.5rem;
-  background-color: utils.$purple_2;
+
+  &.primary {
+    background-color: utils.$purple_2;
+  }
+
+  &.secondary {
+    background-color: #effafe;
+  }
 
   p {
     font: 700 1.125rem utils.$dm;
-    color: utils.$purple_1;
+    &.primary {
+      color: utils.$purple_1;
+    }
+
+    &.secondary {
+      color: #5eccf3;
+    }
   }
 }

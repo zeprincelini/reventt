@@ -10,4 +10,5 @@ import { CommonModule } from '@angular/common';
 })
 export class BadgeComponent {
   @Input() text!: string;
+  @Input() type = 'primary';
 }
