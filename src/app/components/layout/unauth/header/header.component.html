@@ -1,0 +1,27 @@
+<nav class="container">
+  <img
+    src="assets/images/svg/menu.svg"
+    width="30px"
+    class="menu"
+    alt="menu icon"
+    (click)="toggle()"
+  />
+  <div class="wrapper" [ngClass]="onOpen ? 'show' : ''">
+    <p class="logo">LOGO</p>
+    <div class="links">
+      <ng-container *ngFor="let link of navLinks; let last = last">
+        <a
+          *ngIf="!last; else a"
+          class="link"
+          [routerLink]="link.path"
+          routerLinkActive="active"
+        >
+          {{ link.name }}
+        </a>
+        <ng-template #a>
+          <app-button (onClick)="onNavigate()">Lets Talk 👋🏾</app-button>
+        </ng-template>
+      </ng-container>
+    </div>
+  </div>
+</nav>
