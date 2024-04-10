@@ -1,0 +1,68 @@
+@use "../../../../utils.scss";
+
+.container {
+  @include utils.centerPage();
+  padding: 4.25rem 0.625rem;
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+
+  @media (max-width: 850px) {
+    grid-template-columns: 1fr;
+  }
+
+  .left {
+    display: flex;
+    gap: 1rem;
+
+    @media (max-width: 900px) {
+      flex-direction: column;
+    }
+
+    .list {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      app-easy-card {
+        .img {
+          display: grid;
+          place-content: center;
+          width: fit-content;
+          padding: 1rem;
+          border-radius: 50%;
+          background-color: utils.$purple_2;
+        }
+      }
+
+      &.last {
+        margin-top: 40px;
+
+        @media (max-width: 768px) {
+          margin-top: 0px;
+        }
+      }
+    }
+  }
+
+  .right {
+    display: grid;
+    gap: 1.5rem;
+
+    .heading {
+      font: 700 2.5rem utils.$gt;
+      line-height: 2.8rem;
+      color: #0a0a0a;
+      span {
+        color: utils.$purple_1;
+      }
+    }
+
+    .body {
+      font: 400 1.5rem utils.$prox;
+      color: utils.$black_1;
+    }
+  }
+}
