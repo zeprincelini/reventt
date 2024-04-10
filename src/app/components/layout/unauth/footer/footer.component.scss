@@ -1,0 +1,66 @@
+@use "../../../../../utils.scss";
+
+.container {
+  padding: 60px 10px 0px 10px;
+  background-color: utils.$blue_1;
+  color: #ffffff;
+
+  .top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .logo {
+      cursor: pointer;
+      font-size: 40px;
+      font-weight: 400;
+      font-family: utils.$day;
+      color: #ffffff;
+
+      @media (max-width: 768px) {
+        font-size: 30px;
+      }
+    }
+
+    .links {
+      display: flex;
+      gap: 24px;
+
+      @media (max-width: 768px) {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .link {
+        color: #fff;
+        text-decoration: none;
+        font: 400 18px utils.$gt;
+      }
+    }
+
+    .socials {
+      display: flex;
+      gap: 24px;
+    }
+  }
+
+  .line {
+    width: 97%;
+    opacity: 20%;
+    margin: 20px auto;
+    border-color: #fff;
+  }
+
+  .note {
+    word-wrap: break-word;
+    padding: 30px 0px 40px 0px;
+    text-align: center;
+    font: 400 18px utils.$gt;
+  }
+}

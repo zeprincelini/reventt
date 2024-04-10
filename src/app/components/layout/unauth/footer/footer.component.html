@@ -1,0 +1,16 @@
+<footer class="container">
+  <div class="top">
+    <p class="logo" [routerLink]="">LOGO</p>
+    <div class="links">
+      <a class="link" *ngFor="let link of navLinks" [routerLink]="link.path">
+        {{ link.name }}</a
+      >
+    </div>
+    <div class="socials">
+      <img src="assets/images/svg/instagram.svg" alt="instagram icon" />
+      <img src="assets/images/svg/twitter.svg" alt="twitter icon" />
+    </div>
+  </div>
+  <hr class="line" />
+  <p class="note">© {{ now }} reventtechnologies. All rights reserved</p>
+</footer>
