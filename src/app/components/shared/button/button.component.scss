@@ -1,0 +1,21 @@
+@use "../../../../utils.scss";
+
+.btn {
+  border: 0;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  font-family: utils.$dm;
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+.btn.primary {
+  background-color: utils.$purple_1;
+}
+
+.btn.secondary {
+  background-color: #faa307;
+}
