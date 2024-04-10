@@ -1,46 +1,55 @@
 <div class="container">
   <div class="wrapper">
-    <div class="left">
-      <div class="imgWrapper">
-        <img src="assets/images/svg/quote.svg" alt="quotes icon" />
+    <div class="content">
+      <div class="left">
+        <div class="imgWrapper">
+          <img src="assets/images/svg/quote.svg" alt="quotes icon" />
+        </div>
+        <p class="title">Stories from users</p>
+        <div class="body">{{ reviews[x].text }}</div>
+        <div class="name">- {{ reviews[x].name }}</div>
+        <div class="pagination">
+          <div
+            class="prev"
+            (click)="prev()"
+            [ngClass]="x === 0 ? 'disabled' : ''"
+          >
+            <img src="assets/images/svg/arr-left.svg" alt="left arrow" />
+          </div>
+          <div
+            class="next"
+            (click)="next()"
+            [ngClass]="x === reviews.length - 1 ? 'disabled' : ''"
+          >
+            <img src="assets/images/svg/arr-right.svg" alt="right arrow" />
+          </div>
+        </div>
       </div>
-      <p class="title">Stories from users</p>
-      <div class="body">{{ reviews[x].text }}</div>
-      <div class="name">- {{ reviews[x].name }}</div>
-      <div class="pagination">
-        <div
-          class="prev"
-          (click)="prev()"
-          [ngClass]="x === 0 ? 'disabled' : ''"
-        >
-          <img src="assets/images/svg/arr-left.svg" alt="left arrow" />
-        </div>
-        <div
-          class="next"
-          (click)="next()"
-          [ngClass]="x === reviews.length - 1 ? 'disabled' : ''"
-        >
-          <img src="assets/images/svg/arr-right.svg" alt="right arrow" />
-        </div>
+      <div class="right">
+        <img
+          class="white"
+          src="assets/images/svg/white.svg"
+          alt="white ellipse"
+        />
+        <img
+          class="woman"
+          [src]="reviews[x].image"
+          width="350px"
+          alt="smiling woman"
+        />
+        <img
+          class="yellow"
+          src="assets/images/svg/yellow.svg"
+          alt="yellow ellipse"
+        />
       </div>
     </div>
-    <div class="right">
-      <img
-        class="white"
-        src="assets/images/svg/white.svg"
-        alt="white ellipse"
-      />
-      <img
-        class="woman"
-        [src]="reviews[x].image"
-        width="350px"
-        alt="smiling woman"
-      />
-      <img
-        class="yellow"
-        src="assets/images/svg/yellow.svg"
-        alt="yellow ellipse"
-      />
+    <div class="ads">
+      <img src="assets/images/svg/bamboo.svg" alt="bamboo logo" />
+      <img src="assets/images/svg/children.svg" alt="children logo" />
+      <img src="assets/images/svg/cube.svg" alt="cune logo" />
+      <img src="assets/images/svg/artisan.svg" alt="artisan logo" />
+      <img src="assets/images/svg/branch.svg" alt="branch logo" />
     </div>
   </div>
 </div>
