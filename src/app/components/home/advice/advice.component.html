@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="left">
+    <app-badge text="What we offer" type="secondary" />
+    <p class="heading">Financial Advisory, consultation and Lending services</p>
+    <p class="body">
+      We provide business advisory that is backed with funding to increase
+      turnover and in turn profits while alleviating poverty especially among-st
+      women and communities that are under banked or unbanked.
+    </p>
+    <div class="list">
+      <div class="item" *ngFor="let item of list">
+        <div class="imgWrap">
+          <img src="assets/images/svg/tick.svg" alt="check mark" />
+        </div>
+        <p>{{ item }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="right">
+    <img src="assets/images/svg/man_woman.svg" alt="man and woman sitting" />
+  </div>
+</div>
