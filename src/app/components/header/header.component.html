@@ -1,1 +1,20 @@
-<p>header works!</p>
+<nav class="container">
+  <div class="wrapper">
+    <p class="logo">Logo</p>
+    <div class="links">
+      <ng-container *ngFor="let link of navLinks; let last = last">
+        <a
+          *ngIf="!last; else a"
+          class="link"
+          [routerLink]="link.path"
+          routerLinkActive="active"
+        >
+          {{ link.name }}
+        </a>
+        <ng-template #a>
+          <app-button (onClick)="onNavigate()">Lets Talk 👋🏾</app-button>
+        </ng-template>
+      </ng-container>
+    </div>
+  </div>
+</nav>
