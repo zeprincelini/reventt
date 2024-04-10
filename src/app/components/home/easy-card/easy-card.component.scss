@@ -1,0 +1,22 @@
+@use "../../../../utils.scss";
+
+.container {
+  width: fit-content;
+  border-radius: 8px;
+  background-color: #fff;
+  display: grid;
+  gap: 1.5rem;
+  padding: 1rem;
+  box-shadow: 0px 20px 100px 0px #5a71840d;
+
+  .title {
+    font: 500 1.5rem utils.$gt;
+    color: #27384e;
+  }
+
+  .body {
+    font: 400 1rem utils.$prox;
+    line-height: 1.5rem;
+    color: utils.$black_1;
+  }
+}
