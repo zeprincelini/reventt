@@ -1,0 +1,13 @@
+@use "../../../../utils.scss";
+
+.container {
+  width: fit-content;
+  border-radius: 20px;
+  padding: 0.25rem 2.5rem;
+  background-color: utils.$purple_2;
+
+  p {
+    font: 700 1.125rem utils.$dm;
+    color: utils.$purple_1;
+  }
+}
