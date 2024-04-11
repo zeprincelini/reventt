@@ -1,0 +1,71 @@
+@use "../../../../utils.scss";
+
+.container {
+  @include utils.centerPage();
+  padding: 4.25rem 0.625rem;
+  display: grid;
+  gap: 4rem;
+
+  .top {
+    display: grid;
+    gap: 1rem;
+    justify-content: center;
+    text-align: center;
+
+    .title {
+      font: 700 2.5rem utils.$prox;
+      line-height: 2.8rem;
+      color: utils.$black_1;
+    }
+
+    .subtitle {
+      width: 60%;
+      margin: auto;
+      font: 400 1.5rem utils.$gt;
+      line-height: 2.25rem;
+      color: utils.$black_1;
+
+      @media (max-width: 850px) {
+        width: 100%;
+      }
+    }
+  }
+
+  .body {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+
+    .card {
+      display: grid;
+      gap: 1rem;
+
+      .img {
+        max-width: 24rem;
+        height: 25rem;
+        border-radius: 40px;
+        background-color: #c4c4c4;
+
+        @media (max-width: 850px) {
+          max-width: 100%;
+        }
+      }
+
+      .heading {
+        font: 400 1.5rem utils.$gt;
+        line-height: 1.7rem;
+        color: #0a0a0a;
+      }
+
+      .subHeading {
+        color: utils.$black_1;
+        line-height: 1.7rem;
+        font: 400 1.125rem utils.$prox;
+      }
+    }
+
+    @media (max-width: 850px) {
+      grid-template-columns: 1fr;
+    }
+  }
+}

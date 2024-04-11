@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="top">
+    <p class="title">Latest news</p>
+    <p class="subtitle">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Commodo sodales
+      elit quam nisl, amet.
+    </p>
+  </div>
+  <div class="body">
+    <div class="card" *ngFor="let item of list">
+      <div class="img"></div>
+      <p class="heading">{{ item.title }}</p>
+      <p class="subHeading">
+        {{ item.subtitle }}
+      </p>
+    </div>
+  </div>
+</div>
