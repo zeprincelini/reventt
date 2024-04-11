@@ -49,7 +49,7 @@
           margin-left: 5px;
           position: relative;
           width: 10px;
-          height: 76%;
+          height: 78%;
           background-color: #f2f2f2;
           .inner {
             background-color: utils.$purple_1;
@@ -78,7 +78,7 @@
             background-color: utils.$purple_1;
           }
           .counter_3 {
-            bottom: 0px;
+            bottom: -10px;
             background-color: #f2f2f2;
 
             &.active {
