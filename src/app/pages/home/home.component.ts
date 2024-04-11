@@ -8,6 +8,8 @@ import { WhyComponent } from 'src/app/components/home/why/why.component';
 import { AccessComponent } from 'src/app/components/home/access/access.component';
 import { AdviceComponent } from 'src/app/components/home/advice/advice.component';
 import { StoriesComponent } from 'src/app/components/home/stories/stories.component';
+import { NewsComponent } from 'src/app/components/home/news/news.component';
+import { NewsLetterComponent } from 'src/app/components/home/news-letter/news-letter.component';
 
 @Component({
   selector: 'app-home',
@@ -22,6 +24,8 @@ import { StoriesComponent } from 'src/app/components/home/stories/stories.compon
     AccessComponent,
     AdviceComponent,
     StoriesComponent,
+    NewsComponent,
+    NewsLetterComponent,
   ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
