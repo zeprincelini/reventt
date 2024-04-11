@@ -10,6 +10,7 @@ import { AdviceComponent } from 'src/app/components/home/advice/advice.component
 import { StoriesComponent } from 'src/app/components/home/stories/stories.component';
 import { NewsComponent } from 'src/app/components/home/news/news.component';
 import { NewsLetterComponent } from 'src/app/components/home/news-letter/news-letter.component';
+import { ProvisionComponent } from 'src/app/components/home/provision/provision.component';
 
 @Component({
   selector: 'app-home',
@@ -26,6 +27,7 @@ import { NewsLetterComponent } from 'src/app/components/home/news-letter/news-le
     StoriesComponent,
     NewsComponent,
     NewsLetterComponent,
+    ProvisionComponent,
   ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
