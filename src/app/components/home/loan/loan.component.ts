@@ -34,14 +34,14 @@ export class LoanComponent implements AfterViewInit {
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll() {
-    this.checkViewportPosition();
+    this.checkPosition();
   }
 
   ngAfterViewInit() {
-    this.checkViewportPosition();
+    this.checkPosition();
   }
 
-  private checkViewportPosition() {
+  private checkPosition() {
     const rect = this.ref.nativeElement.getBoundingClientRect();
     const isVisible = rect.top >= 0 && rect.bottom <= window.innerHeight;
     if (!this.inView) {
