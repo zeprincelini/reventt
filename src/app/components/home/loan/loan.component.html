@@ -3,15 +3,30 @@
     <p class="heading">Are you looking for a quick loan? Get your loan in</p>
     <p class="time">24 hours ⏳</p>
   </div>
-  <div class="step">
+  <div class="step" #ref>
     <div class="left">
-      <div>a</div>
+      <div class="step-wrapper">
+        <div class="line">
+          <div class="inner" [ngClass]="inView ? 'active' : ''"></div>
+          <div class="counter_1"></div>
+          <div class="counter_2"></div>
+          <div class="counter_3" [ngClass]="inView ? 'active' : ''"></div>
+        </div>
+      </div>
       <div class="list">
         <div class="item" *ngFor="let item of steps; let last = last">
-          <p class="name" [ngClass]="last ? 'last' : ''">
+          <p
+            class="name"
+            [ngClass]="last ? 'last' : ''"
+            [ngStyle]="{ color: last && inView ? '#222222' : '' }"
+          >
             {{ item.name }}
           </p>
-          <p class="body" [ngClass]="last ? 'last' : ''">
+          <p
+            class="body"
+            [ngClass]="last ? 'last' : ''"
+            [ngStyle]="{ color: last && inView ? '#222222' : '' }"
+          >
             {{ item.body }}
           </p>
         </div>

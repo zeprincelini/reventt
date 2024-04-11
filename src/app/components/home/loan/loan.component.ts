@@ -1,4 +1,10 @@
-import { Component } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  HostListener,
+  ViewChild,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -8,7 +14,9 @@ import { CommonModule } from '@angular/common';
   templateUrl: './loan.component.html',
   styleUrls: ['./loan.component.scss'],
 })
-export class LoanComponent {
+export class LoanComponent implements AfterViewInit {
+  @ViewChild('ref') ref!: ElementRef;
+  inView = false;
   steps = [
     {
       name: 'Apply',
@@ -23,4 +31,21 @@ export class LoanComponent {
       body: "After evaluation you will get your loan, all of this will occur within 24 hours. Our loans are quick and easy. It's that simple",
     },
   ];
+
+  @HostListener('window:scroll', ['$event'])
+  onWindowScroll() {
+    this.checkViewportPosition();
+  }
+
+  ngAfterViewInit() {
+    this.checkViewportPosition();
+  }
+
+  private checkViewportPosition() {
+    const rect = this.ref.nativeElement.getBoundingClientRect();
+    const isVisible = rect.top >= 0 && rect.bottom <= window.innerHeight;
+    if (!this.inView) {
+      this.inView = isVisible;
+    }
+  }
 }
