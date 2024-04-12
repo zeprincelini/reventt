@@ -5,6 +5,10 @@
   border-radius: 20px;
   padding: 0.25rem 2.5rem;
 
+  @media (max-width: 768px) {
+    margin: 0 auto;
+  }
+
   &.primary {
     background-color: utils.$purple_2;
   }

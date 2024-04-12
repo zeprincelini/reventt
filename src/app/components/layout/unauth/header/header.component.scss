@@ -1,75 +1,101 @@
 @use "../../../../../utils.scss";
 
-.container {
-  @include utils.centerPage();
-  padding: 1.875rem 10px;
-  display: grid;
-  position: relative;
+.bg {
+  background-color: #fff;
 
-  .menu {
-    cursor: pointer;
-    display: none;
-    justify-self: end;
-
-    @media (max-width: 768px) {
-      display: block;
-      z-index: 10;
-    }
+  &.stick {
+    position: sticky;
+    top: 0px;
+    z-index: 10;
+    border-bottom: 0.2px solid utils.$purple_2;
+    transition: all 0.5s ease-in-out;
   }
 
-  .wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  .container {
+    @include utils.centerPage();
+    padding: 1.875rem 10px;
+    display: grid;
+    position: relative;
 
-    @media (max-width: 768px) {
-      flex-direction: column;
-      position: absolute;
-      width: 100%;
-      z-index: 5;
-      padding: 20px;
-      background-color: #fff;
-      gap: 1rem;
-      align-items: start;
+    .menu-wrapper {
       display: none;
-
-      &.show {
-        display: flex;
-      }
-    }
-
-    .logo {
-      font-size: 2.5rem;
-      font-weight: 400;
-      font-family: utils.$day;
-      color: #7d97f4;
+      z-index: 10;
 
       @media (max-width: 768px) {
-        font-size: 1.25rem;
+        display: block;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: 400;
+        font-family: utils.$day;
+        color: #7d97f4;
+      }
+
+      .menu {
+        cursor: pointer;
       }
     }
 
-    .links {
+    .wrapper {
       display: flex;
-      gap: 2.5rem;
-      flex-direction: row;
+      justify-content: space-between;
       align-items: center;
+      transition: all 0.5s ease-in-out;
 
       @media (max-width: 768px) {
         flex-direction: column;
+        position: absolute;
         width: 100%;
+        z-index: 5;
+        padding: 20px;
+        background-color: #fff;
+        gap: 1rem;
+        align-items: start;
+        display: none;
+
+        &.show {
+          display: flex;
+          padding-top: 3rem;
+        }
       }
 
-      .link {
+      .logo {
+        font-size: 2.5rem;
         font-weight: 400;
-        font-size: 1rem;
-        text-decoration: none;
-        color: utils.$black_1;
-        font-family: utils.$gt;
+        font-family: utils.$day;
+        color: #7d97f4;
 
-        &.active {
-          font-weight: 700;
-          color: utils.$purple_1;
+        @media (max-width: 768px) {
+          display: none;
+        }
+      }
+
+      .links {
+        display: flex;
+        gap: 2.5rem;
+        flex-direction: row;
+        align-items: center;
+
+        @media (max-width: 768px) {
+          flex-direction: column;
+          width: 100%;
+        }
+
+        .link {
+          font-weight: 400;
+          font-size: 1rem;
+          text-decoration: none;
+          color: utils.$black_1;
+          font-family: utils.$gt;
+
+          &.active {
+            font-weight: 700;
+            color: utils.$purple_1;
+          }
         }
       }
     }

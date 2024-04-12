@@ -58,6 +58,11 @@
           display: flex;
           gap: 1.5rem;
 
+          @media (max-width: 768px) {
+            justify-content: center;
+            margin-bottom: 1rem;
+          }
+
           .prev,
           .next {
             cursor: pointer;

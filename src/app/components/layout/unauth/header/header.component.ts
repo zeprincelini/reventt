@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
 import { ButtonComponent } from '../../../shared/button/button.component';
@@ -11,6 +11,7 @@ import { ButtonComponent } from '../../../shared/button/button.component';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
+  position!: number;
   onOpen = false;
   navLinks: { path: string; name: string }[] = [
     {
@@ -29,6 +30,11 @@ export class HeaderComponent {
   ];
 
   constructor(private router: Router) {}
+
+  @HostListener('window:scroll', ['$event'])
+  checkHeight() {
+    this.position = window.scrollY;
+  }
 
   toggle() {
     this.onOpen = !this.onOpen;
