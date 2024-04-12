@@ -3,6 +3,7 @@ import {
   Component,
   ElementRef,
   HostListener,
+  OnDestroy,
   ViewChild,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -14,8 +15,9 @@ import { CommonModule } from '@angular/common';
   templateUrl: './loan.component.html',
   styleUrls: ['./loan.component.scss'],
 })
-export class LoanComponent implements AfterViewInit {
+export class LoanComponent implements AfterViewInit, OnDestroy {
   @ViewChild('ref') ref!: ElementRef;
+  observer!: IntersectionObserver;
   inView = false;
   steps = [
     {
@@ -32,20 +34,23 @@ export class LoanComponent implements AfterViewInit {
     },
   ];
 
-  @HostListener('window:scroll', ['$event'])
-  onWindowScroll() {
-    this.checkPosition();
-  }
-
   ngAfterViewInit() {
     this.checkPosition();
   }
 
-  private checkPosition() {
-    const rect = this.ref.nativeElement.getBoundingClientRect();
-    const isVisible = rect.top >= 0 && rect.bottom <= window.innerHeight;
-    if (!this.inView) {
-      this.inView = isVisible;
-    }
+  checkPosition() {
+    this.observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          if (!this.inView) this.inView = true;
+        }
+      },
+      { threshold: 0.4 }
+    );
+    this.observer.observe(this.ref.nativeElement);
+  }
+
+  ngOnDestroy(): void {
+    this.observer.disconnect();
   }
 }
